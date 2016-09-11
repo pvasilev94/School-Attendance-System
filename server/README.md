@@ -1,2 +1,4 @@
 # School-Attendance-System
-Final year project - School attendance system using beacons.
+# Server
+
+Database for the project - RestFull API
