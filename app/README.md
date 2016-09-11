@@ -1,2 +1,4 @@
 # School-Attendance-System
-Final year project - School attendance system using beacons.
+# Android App 
+
+Acts as Detector for the Beacon bracelet.
