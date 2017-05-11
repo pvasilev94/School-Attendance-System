@@ -1,5 +1,6 @@
 # School-Attendance-System
-# Server
+# Firebase
 
-Database for the project - RestFull API
-$ add feature to send sms to parent after student has checked in.
+Example json has been added to import in new database if needed. How to setup your own firebase database - visit firebase website.
+
+
