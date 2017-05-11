@@ -1,0 +1,93 @@
+{
+  "student1" : {
+    "beaconMAC" : "C4:2C:F7:73:C7:9B",
+    "contactNumber" : "0692312345",
+    "device" : {
+      "key" : "student1",
+      "level" : 2,
+      "name" : "qKpmeMtILOhi7dYMjfzGQKLQLpW2"
+    },
+    "lastSeen" : true,
+    "studentId" : "1",
+    "studentName" : "Mark",
+    "timestamp" : 1493592316058
+  },
+  "student2" : {
+    "beaconMAC" : "C9:D3:30:35:E5:1D",
+    "contactNumber" : "0834566888",
+    "device" : {
+      "key" : "student2",
+      "level" : 2,
+      "name" : "qKpmeMtILOhi7dYMjfzGQKLQLpW2"
+    },
+    "lastSeen" : true,
+    "studentId" : "2",
+    "studentName" : "Diana",
+    "timestamp" : 1493592316058
+  },
+  "student3" : {
+    "beaconMAC" : "C0:DD:86:11:94:88",
+    "contactNumber" : "084453499",
+    "device" : {
+      "key" : "student3",
+      "level" : 2,
+      "name" : "qKpmeMtILOhi7dYMjfzGQKLQLpW2"
+    },
+    "lastSeen" : true,
+    "studentId" : "3",
+    "studentName" : "Mary",
+    "timestamp" : "C0:DD:86:11:94:88"
+  },
+  "student4" : {
+    "beaconMAC" : "CF:7C:48:0E:94:BE",
+    "contactNumber" : "0212351232",
+    "device" : {
+      "key" : "student4",
+      "level" : 2,
+      "name" : "qKpmeMtILOhi7dYMjfzGQKLQLpW2"
+    },
+    "lastSeen" : true,
+    "studentId" : "4",
+    "studentName" : "George",
+    "timestamp" : 1493592316058
+  },
+  "student5" : {
+    "beaconMAC" : "ED:4B:4C:7A:56:2D",
+    "contactNumber" : "0834453479",
+    "device" : {
+      "key" : "student5",
+      "level" : 2,
+      "name" : "qKpmeMtILOhi7dYMjfzGQKLQLpW2"
+    },
+    "lastSeen" : true,
+    "studentId" : "5",
+    "studentName" : "Pavel",
+    "timestamp" : 123
+  },
+  "student6" : {
+    "beaconMAC" : "20:307277",
+    "contactNumber" : "02174784",
+    "device" : {
+      "key" : "student6",
+      "level" : 1,
+      "name" : "not specified"
+    },
+    "lastSeen" : false,
+    "studentId" : "6",
+    "studentName" : "aoife",
+    "timestamp" : 123
+  },
+  "student7" : {
+    "beaconMAC" : "20:30",
+    "contactNumber" : "244747",
+    "device" : {
+      "key" : "student7",
+      "level" : 1,
+      "name" : "not specified"
+    },
+    "lastSeen" : false,
+    "studentId" : "7",
+    "studentName" : "pavel",
+    "timestamp" : 123
+  }
+}
