@@ -1,0 +1,40 @@
+
+<link rel="import" href="widgets/sams-add-student.html">
+<link rel="import" href="widgets/sams-add-teacher.html">
+<link rel="import" href="../../../../../bower_components/polymerfire/firebase-document.html">
+
+<dom-module id="pa-form-elements">
+  <template>
+    <style include="shared-styles"></style>
+
+    <pa-widgets widgets="{{widgets}}" cols="{{cols}}"></pa-widgets>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pa-form-elements',
+
+        properties: {
+          widgets: {
+            type: Array,
+            value: [
+              {
+                title: 'Add User',
+                component: 'sams-add-teacher'
+              },
+
+              {
+                title: 'Add Student',
+                component: 'sams-add-student'
+              }
+            ]
+          }
+        }
+      });
+    })();
+  </script>
+
+</dom-module>

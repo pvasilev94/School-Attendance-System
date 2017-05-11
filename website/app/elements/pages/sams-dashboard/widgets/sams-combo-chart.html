@@ -1,0 +1,27 @@
+<dom-module id="pa-combo-chart">
+  <template>
+    <style include="shared-styles"></style>
+
+    <google-chart
+        type='combo'
+        options='{"seriesType": "bars", "series": {"2": {"type": "line"}}}'
+        data='[ ["Students", "Missing", "Attending"],
+                       ["Mon", 25, 45],
+                       ["Tue", 30, 40],
+                       ["Wed", 20, 50],
+                       ["Thu", 10, 60],
+                       ["Fri", 5, 65] ]'>
+    </google-chart>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pa-combo-chart'
+      });
+    })();
+  </script>
+
+</dom-module>

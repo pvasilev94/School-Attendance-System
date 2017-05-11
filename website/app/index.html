@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AAMS Admin</title>
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#2E3AA1">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="AAMS Admin">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <link rel="stylesheet" href="../bower_components/leaflet/dist/leaflet.css">
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- will be replaced with elements/elements.vulcanized.html -->
+  <link rel="import" href="elements/elements.html">
+  <!-- endreplace-->
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
+
+  <!--Add Firebase config-->
+  <link rel="import" href="../bower_components/polymerfire/polymerfire.html">
+  <link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+  <link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+</head>
+
+<firebase-app
+  name="aams"
+  api-key="AIzaSyA4xHZ_9Kr1f5A62mRAjGFagmRBvWAfN9k"
+  auth-domain="sams-5a2f3.firebaseapp.com"
+  database-url="sams-5a2f3.firebaseio.com">
+</firebase-app>
+
+<body unresolved class="fullbleed layout vertical">
+<span id="browser-sync-binding"></span>
+<template is="dom-bind" id="app">
+
+  <sams-auth-data id="data" location='{{location}}' user="{{user}}" todos="{{todos}}" profile="{{profile}}"></sams-auth-data>
+
+  <paper-scroll-header-panel fixed>
+
+    <paper-toolbar class="top-toolbar">
+      <h1><a data-route="dashboard" href="/" on-click="onDataRouteClick">AAMS Admin</a></h1>
+      <paper-icon-button icon="menu" class="toggle-drawer" on-click="toggleDrawer"></paper-icon-button>
+      <span class="flex"></span>
+      <paper-icon-button icon="refresh" class="refresh-icon"></paper-icon-button>
+      <sams-search></sams-search>
+      <sams-auth-info location='{{location}}' user="{{user}}"  profile='{{profile}}' on-sign-out="signOut" on-sign-in="signIn"></sams-auth-info>
+    </paper-toolbar>
+
+    <paper-drawer-panel id="paperDrawerPanel">
+
+      <paper-scroll-header-panel drawer>
+
+        <sams-menu route="{{route}}" user="{{user}}"></sams-menu>
+
+      </paper-scroll-header-panel>
+
+      <paper-scroll-header-panel main>
+
+        <sams-pages route="{{route}}" user="{{user}}" profile='{{profile}}' todos="{{todos}}" on-sign-in="signIn"></sams-pages>
+
+        <sams-footer></sams-footer>
+      </paper-scroll-header-panel>
+
+    </paper-drawer-panel>
+
+  </paper-scroll-header-panel>
+
+</template>
+
+<firebase-app auth-domain="sams-5a2f3.firebaseapp.com"
+              database-url="https://sams-5a2f3.firebaseio.com"
+              api-key="AIzaSyA4xHZ_9Kr1f5A62mRAjGFagmRBvWAfN9k"></firebase-app>
+<firebase-auth id="auth" user="{{user}}" provider="google" on-error="handleError"></firebase-auth>
+<!-- build:js scripts/app.js -->
+<script src="scripts/app.js"></script>
+<script src="../bower_components/leaflet/dist/leaflet-src.js"></script>
+
+<!--<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>-->
+<!--<script>-->
+  <!--// Initialize Firebase-->
+  <!--var config = {-->
+    <!--apiKey: "AIzaSyA4xHZ_9Kr1f5A62mRAjGFagmRBvWAfN9k",-->
+    <!--authDomain: "sams-5a2f3.firebaseapp.com",-->
+    <!--databaseURL: "https://sams-5a2f3.firebaseio.com",-->
+    <!--projectId: "sams-5a2f3",-->
+    <!--storageBucket: "sams-5a2f3.appspot.com",-->
+    <!--messagingSenderId: "1026562280223"-->
+  <!--};-->
+  <!--firebase.initializeApp(config);-->
+<!--</script>-->
+<!-- endbuild-->
+</body>
+</html>

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AAMS.iml" filepath="$PROJECT_DIR$/AAMS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/database.iml" filepath="$PROJECT_DIR$/database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bluevisionsdk/bluevisionsdk.iml" filepath="$PROJECT_DIR$/bluevisionsdk/bluevisionsdk.iml" />
     </modules>
   </component>
 </project>

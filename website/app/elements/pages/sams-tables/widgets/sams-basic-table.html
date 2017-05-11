@@ -1,0 +1,27 @@
+<link rel="import" href="sams-table.html">
+<link rel="import" href="../../../../../bower_components/polymerfire/firebase-query.html">
+
+<dom-module id="pa-basic-table">
+  <template>
+    <firebase-query
+                    path="/students"
+                    data="{{data}}">
+    </firebase-query>
+    <style include="shared-styles"></style>
+
+    <pa-table
+      headers='["#", "Name", "Contact Number", "Beacon MAC", "Status", "Device - Last seen", "Device Level"]'>
+    ></pa-table>
+  </template>
+  <script>
+    (function() {
+
+      Polymer({
+        is : "pa-basic-table",
+
+
+      });
+    })();
+  </script>
+
+</dom-module>

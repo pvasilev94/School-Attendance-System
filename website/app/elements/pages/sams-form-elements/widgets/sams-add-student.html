@@ -1,0 +1,52 @@
+<dom-module id="sams-add-student">
+  <firebase-document id="mydoc"
+    path="/student/"
+                     data="{{data}}">>
+  </firebase-document>
+  <template >
+    <style include="shared-styles"></style>
+    <div class="vertical-section">
+      <paper-input label="KEY" id="key"></paper-input>
+
+      <paper-input label="Name" id="studentName"></paper-input>
+
+      <paper-input label="Beacon MAC" id="beaconMAC"></paper-input>
+
+      <paper-input label="Contact number" id="contactNumber"></paper-input>
+
+      <paper-input label="Contact name" id="contactName"></paper-input>
+
+      <paper-button raised class="colorful custom" on-click="addstudent">SUBMIT</paper-button>
+    </div>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'sams-add-student',
+        addstudent : function () {
+          this.error = null;
+          var var1 = 'students/student';
+          var var2 = var1.concat(this.$.key.value);
+          var student = "student";
+          var studentKey = student.concat(this.$.key.value);
+          var device = {key: studentKey, level:1, name: 'not specified'};
+          var person = {beaconMAC: this.$.beaconMAC.value, contactNumber: this.$.contactNumber.value, device,lastSeen: false,studentName: this.$.studentName.value, timestamp: 123, studentId: this.$.key.value};
+          this.$.data = { person };
+          var update = {};
+          update[var2] = person;
+          firebase.database().ref().update(update);
+          app.route = "tables"
+        },
+        properties: {
+          item: {
+            type: Object
+          }
+        },
+      });
+    })();
+  </script>
+
+</dom-module>

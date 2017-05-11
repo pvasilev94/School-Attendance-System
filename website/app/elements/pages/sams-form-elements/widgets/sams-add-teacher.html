@@ -1,0 +1,30 @@
+<dom-module id="sams-add-teacher">
+  <template>
+    <style include="shared-styles">
+      .bottom-left {
+        position: fixed;
+        left: 10px;
+        bottom: 10px;
+      }
+    </style>
+
+    <div class="vertical-section">
+      <paper-input label="Email Address"></paper-input>
+
+      <paper-input label="Password"></paper-input>
+
+    </div>
+    <paper-button raised class="colorful custom" on-click="addstudent(">SUBMIT</paper-button>
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'sams-add-teacher'
+      });
+    })();
+  </script>
+
+</dom-module>

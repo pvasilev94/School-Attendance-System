@@ -1,0 +1,121 @@
+<dom-module id="pa-table">
+  <template>
+    <firebase-query
+      path="/students"
+      data="{{data}}">
+    </firebase-query>
+    <firebase-query
+      path="/student-details"
+      data="{{details}}">
+    </firebase-query>
+    <style include="shared-styles"></style>
+    <style>
+      .table-container {
+        height: 300px;
+        overflow-y: auto;
+      }
+      table {
+        width: 100%;
+        max-width: 100%;
+        background-color: transparent;
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+      th {
+        text-align: left;
+        font-weight: 500;
+        font-size: 12px;
+        color: var(--secondary-text-color);
+        padding: 8px;
+      }
+      td {
+        font-size: 12px;
+        color: var(--primary-text-color);
+        padding: 0 8px;
+        line-height: 35px;
+      }
+      tr:hover td {
+         background: var(--paper-indigo-50);
+      }
+    </style>
+
+    <div class="table-container">
+      <table>
+        <thead>
+        <tr>
+          <template is="dom-repeat" items="{{headers}}">
+            <th>{{item}}</th>
+          </template>
+        </tr>
+        </thead>
+        <tbody>
+        <template is="dom-repeat" items="{{data}}" as="data">
+          <tr>
+            <template is="dom-repeat" items="{{_combineArray(details,data)}}" as="data">
+              <td>{{data}}</td>
+            </template>
+          </tr>
+        </template>
+        </tbody>
+      </table>
+    </div>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pa-table',
+
+        properties: {
+          headers: {
+            type: Array,
+            value: []
+          },
+          data: {
+            type: Object,
+            observer : 'dataChanged'
+          },
+          details : {
+            type : Object,
+            notify : true
+          }
+        },
+        dataChanged : function(newData, oldData) {
+          console.log("objects in newData:", newData);
+          console.log("objects in oldData:", oldData);
+          console.log('details', this.details)
+        },
+        _makeArray: function(items) {
+          return Object.keys(items).map(
+            function (key)
+          { return items[key]; });
+        },
+        _combineArray: function (details, data) {
+          var array = [];
+          array [0] = data.studentId;
+          array [1] = data.studentName;
+          array [2] = data.contactNumber;
+          array [3] = data.beaconMAC;
+          if(data.lastSeen == true) {
+            array [4] = true;
+          }
+          else array [4] = false;
+          array [5] = data.device.name;
+          array [6] = data.device.level;
+          return array;
+        },
+        _combineObject: function(obj2, obj1) {
+          var obj3 = {};
+          for (var attrname in obj1) { obj3[attrname] = obj1[attrname]; }
+          for (var attrname in obj2) { obj3[attrname] = obj2[attrname]; }
+          console.log('This object' + obj3.toString());
+          return obj3;
+        }
+      });
+    })();
+  </script>
+
+</dom-module>

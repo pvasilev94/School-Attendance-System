@@ -1,0 +1,50 @@
+<link rel="import" href="widgets/sams-todo/sams-todo.html">
+<link rel="import" href="widgets/sams-about.html">
+<link rel="import" href="widgets/sams-combo-chart.html">
+<link rel="import" href="widgets/sams-news.html">
+
+<dom-module id="pa-dashboard">
+  <template>
+    <style include="shared-styles"></style>
+
+    <sams-simple-grid sm-cols="1" md-cols$='{{cols}}'>
+
+      <pa-widget widget="{{ widgets.comboChart}}"></pa-widget>
+
+      <!-- todo: pass component with params to pa-widget if possible -->
+
+
+      <pa-widget widget="{{ widgets.news }}"></pa-widget>
+
+    </sams-simple-grid>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pa-dashboard',
+
+        properties: {
+          widgets: {
+            type: Array,
+            value: {
+              comboChart: {
+                title: 'Weekly Report',
+                component: 'pa-combo-chart'
+              },
+              news: {
+                title: 'Test',
+                component: 'pa-news'
+              }
+
+            }
+          }
+        }
+      });
+    })();
+  </script>
+
+</dom-module>
