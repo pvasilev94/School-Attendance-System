@@ -3,6 +3,9 @@
 
 # How to setup:
 
+# Live demo available - https://sams-5a2f3.firebaseapp.com/
+
+
 1. Clone the project
 git clone https://github.com/pvasilev94/School-Attendance-System
 2. cd website
