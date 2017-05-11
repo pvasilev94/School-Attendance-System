@@ -1,2 +1,2 @@
 # School-Attendance-System
-Final year project - School attendance system using beacons.
+Final year project - Automated attendance system using beacons.
